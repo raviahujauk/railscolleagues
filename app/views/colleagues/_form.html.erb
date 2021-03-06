@@ -1,0 +1,43 @@
+<%= form_with(model: colleague, local: true) do |form| %>
+  <% if colleague.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(colleague.errors.count, "error") %> prohibited this colleague from being saved:</h2>
+
+      <ul>
+        <% colleague.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.text_field :first_name, class:"form-control" , placeholder:"First Name"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :last_name, class:"form-control" , placeholder:"Last Name"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :email, class:"form-control" , placeholder:"Email"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :phone ,class:"form-control" , placeholder:"Phone Number"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :twitter , class:"form-control" , placeholder:"Twitter ID"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.number_field :user_id , id: :colleague_user_id, class:"form-control" , value:current_user.id, type: :hidden%>
+  </div>
+  <% current_user.id %>
+
+  <br/>
+  <div class="actions">
+    <%= form.submit class:"btn btn-secondary"%>
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+
+
+
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @colleague.first_name %>
+    <%= @colleague.last_name %>
+  </h1>
+    <hr class="my-4">
+  <%= @colleague.email %> |
+  <%= @colleague.phone %> |
+  <%= @colleague.twitter %>
+  <br/>
+  <br/>
+  <br/>
+<%= link_to 'Edit', edit_colleague_path(@colleague) , class:"btn btn-secondary"%>
+
+<%= link_to 'Delete', @colleague, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+ 
+<%= link_to 'Back', colleagues_path , class:"btn btn-secondary"%>
+</div>
+
+
+
+
+
+
+
